@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f395145ca4.js" crossorigin="anonymous"></script>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/calendar-icon.png">
+    <title>Planner</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="toggle-div">
+                <h5 class="active-task-toggle active">ACTIVE</h5>
+                <h5 class="past-task-toggle">HISTORY</h5>
+            </div>
+            <div class="task-display active-task">
+            </div>
+            <div class="history-task hidden">
+            </div>
+        </div>
+        <div class="calendar">
+            <div class="calendar-header">
+                <div class="prev-month"><i class="fas fa-angle-left"></i></i> </div>
+                <div class="current-month"></div>
+                <div class="next-month"> <i class="fas fa-angle-right"></i> </div>
+            </div>
+            <div class="calendar-container">
+                <div class="calendar-days">
+                    <div class="grid-item">
+                        <h5>Mon</h5>
+                    </div>
+                    <div class="grid-item">
+                        <h5>Tue</h5>
+                    </div>
+                    <div class="grid-item">
+                        <h5>Wen</h5>
+                    </div>
+                    <div class="grid-item">
+                        <h5>Thu</h5>
+                    </div>
+                    <div class="grid-item">
+                        <h5>Fri</h5>
+                    </div>
+                    <div class="grid-item">
+                        <h5>Sat</h5>
+                    </div>
+                    <div class="grid-item">
+                        <h5>Sun</h5>
+                    </div>
+
+                </div>
+                <div class="calendar-body">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="input-form">
+                <h3>Task information</h3>
+                <form>
+                    <div class="task-title">
+                        <h4>Title: </h4>
+                        <input type="text" id="task-title" placeholder="Enter task title" required>
+                    </div>
+                    <div class="task-desc">
+                        <h4>Description: </h4>
+                        <textarea placeholder="Enter task description" name="task-desc" rows="10"
+                            id="task-desc"></textarea>
+                    </div>
+                    <div class="date">
+                        <div>Task set for <span class="task-date"></span></div>
+                        <button type="button" class="submit-form">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

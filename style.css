@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "Merriweather", serif;
+}
+/* CALENDAR */
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1%;
+}
+
+.prev-month,
+.next-month,
+.current-month {
+  font-size: 28px;
+  margin: 10px;
+}
+
+.current-month {
+  min-width: 240px;
+  text-align: center;
+}
+.prev-month:hover,
+.next-month:hover {
+  cursor: pointer;
+  color: crimson;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+.fas {
+  font-size: 48px;
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 100px);
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 0;
+}
+
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.calendar-box {
+  height: 50px;
+  width: 100px;
+  border: 1px dashed black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.calendar-box-empty {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.calendar-box:hover {
+  background-color: crimson;
+  cursor: pointer;
+  color: white;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 100px);
+
+  grid-gap: 0;
+  margin: auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+.grid-item {
+  height: 70px;
+  width: 100px;
+}
+
+/*  TASK INPUT AND DISPLAY*/
+.container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.input-form > form {
+  width: 100%;
+  min-width: 350px;
+  margin: auto;
+}
+
+.task-title {
+  display: flex;
+  align-items: center;
+}
+
+.task-title > input {
+  border: none;
+  height: fit-content;
+  outline: 0;
+  border-bottom: 2px solid black;
+  margin-left: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  width: 100%;
+  transition: border 200ms ease-out;
+}
+.task-title > input:focus {
+  border-color: rgb(16, 199, 92);
+}
+.task-desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-desc > h4 {
+  margin-bottom: 0;
+}
+.task-desc > textarea {
+  margin-top: 10px;
+  resize: none;
+  outline: none;
+  width: 100%;
+  transition: border 200ms ease-out;
+}
+
+.task-desc > textarea:focus {
+  border-color: rgb(16, 199, 92);
+}
+
+.date {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.date > button {
+  border: none;
+  background-color: rgb(30, 167, 30);
+  padding: 8px 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.date > button:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.task-display,
+.history-task {
+  height: 400px;
+  width: 100%;
+  overflow: scroll;
+  margin-right: 10%;
+  overflow-x: hidden;
+}
+
+.task-body {
+  color: crimson;
+  white-space: initial;
+  max-width: 300px;
+  word-wrap: break-word;
+  margin-bottom: 0;
+}
+
+.content {
+  width: 20%;
+}
+
+.toggle-div {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+}
+
+.toggle-div > h5 {
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+  min-width: 130px;
+}
+
+.toggle-div > h5:hover {
+  cursor: pointer;
+  background-color: rgb(25, 101, 241);
+  color: white;
+}
+
+.task-item {
+  border-bottom: 1px dashed black;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-pending {
+  background-color: rgb(24, 190, 38);
+  color: white;
+}
+
+/* MODAL STUFF */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border: 1px dashed black;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  position: relative;
+  margin: auto;
+  min-width: 400px;
+}
+
+.close {
+  color: crimson;
+  float: right;
+  font-size: 42px;
+  font-weight: bold;
+  position: absolute;
+  top: 2px;
+  right: 15px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgb(16, 199, 92);
+  color: white;
+}
+
+.fa-check-circle,
+.fa-trash-alt {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.fa-check-circle:hover {
+  cursor: pointer;
+  color: rgb(16, 199, 92);
+}
+.fa-trash-alt:hover {
+  cursor: pointer;
+  color: crimson;
+}
+
+.fa-trash-alt {
+  margin-right: 10px;
+}
