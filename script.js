@@ -75,7 +75,7 @@ const renderCalendar = (year, month) => {
     document.querySelector(".calendar-body").append(box);
 
     // Color the day to display a task is due that day
-    tasks.forEach((task) => {
+    tasks?.forEach((task) => {
       if (task.status === "active" && task.date === `${i}/${month}/${year}`) {
         box.classList.add("task-pending");
       }
