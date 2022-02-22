@@ -57,7 +57,7 @@ const renderCalendar = (year, month) => {
   document.querySelector(".calendar-body").innerHTML = null;
   let counter = 0;
   const tasks = JSON.parse(localStorage.getItem("Task"));
-
+  console.log(tasks, "rendered");
   // Display empty squares for every day before the 1st of the month
   if (new Date(year, month - 1, 1).getDay() !== 1) {
     const difference = Math.abs(new Date(year, month - 1, 0).getDay());
@@ -75,6 +75,7 @@ const renderCalendar = (year, month) => {
     document.querySelector(".calendar-body").append(box);
 
     // Color the day to display a task is due that day
+    console.log(tasks);
     tasks?.forEach((task) => {
       if (task.status === "active" && task.date === `${i}/${month}/${year}`) {
         box.classList.add("task-pending");
@@ -126,9 +127,8 @@ document.querySelector(".submit-form").addEventListener("click", (e) => {
     else {
       taskArray.push(Task);
       localStorage.setItem("Task", JSON.stringify(taskArray));
-      renderCalendar(displayedYear, Task.date.split("/")[1]);
     }
-
+    renderCalendar(displayedYear, Task.date.split("/")[1]);
     listOutTasks();
     modal.style.display = "none";
   }
