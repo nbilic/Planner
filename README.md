@@ -2,4 +2,4 @@
 
 https://nbilic.github.io/Planner/
 
-Click on a day in calendar to submit new tasks
+Click on a day in the calendar to submit new tasks
